@@ -10,6 +10,11 @@
 - Display map in location
 
 
+##Version 0.5
+- Added the github updater.
+
+##Version 0.4
+- Fixed issue for event display
 
 ##Version 0.3
 - Custom templating for events and locations
