@@ -1,7 +1,7 @@
 <?php get_template_part('featured-event-slider'); ?>
     
   
-
+<!--
     <div class="section">
 
       <div class="container">
@@ -42,10 +42,10 @@
           </div>
         </div><!-- /.row -->
 
-      </div><!-- /.container -->
+<!--      </div><!-- /.container -->
 
-    </div><!-- /.section -->
-
+<!--     </div><!-- /.section -->
+<!-- 
     <div class="section-colored home">
 
       <div class="container">
@@ -58,10 +58,10 @@
             <a href="#" class="btn btn-danger btn-lg">Contact with us</a>
           </div>
         </div><!-- /.row -->
+<!-- 
+  <!--     </div><!-- /.container -->
 
-      </div><!-- /.container -->
-
-    </div><!-- /.section-colored -->
+   <!--  </div><!-- /.section-colored -->
 		 <?php 
 global $post, $event;
 query_posts( array ( 'post_type' => 'event' ,   'posts_per_page' => 6) ); ?>
