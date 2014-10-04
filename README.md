@@ -15,6 +15,7 @@
 - Added custom fonts
 - Fixed events url issue
 - Added related event functions
+- Added the archive type for all the events
 
 
 ##Version 0.5
