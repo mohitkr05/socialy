@@ -1,17 +1,19 @@
- html, 
+@import url(http://fonts.googleapis.com/css?family=Leckerli+One|Oxygen:400,700,300);
+
+html, 
 body {
     height: 100%;
     color: #121212;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Oxygen', sans-serif;
     font-weight: 300;
     color: #121212;
     -webkit-font-smoothing: antialiased;
 }
 /*typography bootstrap overrides*/
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Leckerli One', cursive;
     font-weight: 700;
     line-height: 1;
 }
@@ -86,7 +88,7 @@ blockquote {
 }
 
 .navbar-inverse .navbar-brand{
-  font-family: 'pacificoregular';
+   
   font-size: 30px;
   line-height: 40px;
   color: #FFF;
@@ -99,7 +101,7 @@ blockquote {
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
   padding: 18px 15px;
-  font-family: 'open_sansregular';
+  
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -629,7 +631,7 @@ span.page-numbers.current {
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
-	font-family: 'Knewave', cursive;
+	 
 	
 }
 .bypostauthor {

@@ -10,6 +10,13 @@
 - Display map in location
 
 
+
+##Version 0.6
+- Added custom fonts
+- Fixed events url issue
+- Added related event functions
+
+
 ##Version 0.5
 - Added the github updater.
 

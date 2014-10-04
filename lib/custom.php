@@ -140,3 +140,52 @@ function my_wp_mail_from($content_type) {
 
 add_filter('wp_mail_from','my_wp_mail_from');
 add_filter('wp_mail_from_name','my_wp_mail_from_name');
+
+
+
+// Function for the related events
+
+function display_related_events($post) {
+ 
+//Get array of terms
+$terms = get_the_terms( $post->ID , 'category', 'string');
+//Pluck out the IDs to get an array of IDS
+$term_ids = wp_list_pluck($terms,'term_id');
+
+//Query posts with tax_query. Choose in 'IN' if want to query posts with any of the terms
+//Chose 'AND' if you want to query for posts with all terms
+  $second_query = new WP_Query( array(
+      'post_type' => 'event',
+      'tax_query' => array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field' => 'id',
+                        'terms' => $term_ids,
+                        'operator'=> 'IN' //Or 'AND' or 'NOT IN'
+                     )),
+      'posts_per_page' => 3,
+      'ignore_sticky_posts' => 1,
+      'orderby' => 'rand',
+      'post__not_in'=>array($post->ID)
+   ) );
+
+    if($second_query->have_posts()) { ?>
+		<div class="well row">
+     <?php while ($second_query->have_posts() ) : $second_query->the_post(); ?>
+      <div class="single related col-xs-6 col-md-4">
+           <?php if (has_post_thumbnail()) { ?>
+            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"> <?php 
+				  the_post_thumbnail( 'related_sm', array( 'class' => 'img-responsive thumbnail img-home-portfolio' ,'alt' => get_the_title()) );  		?>
+				<h4><?php the_title(); ?></h4>
+									 </a>
+            <?php } else { ?>
+                 <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            <?php } ?>
+       </div>
+   <?php endwhile; wp_reset_query(); ?>
+									 </div>
+  <?php  }
+	
+}
+?>
+ 

@@ -757,7 +757,6 @@ i.icon-xlg {
 }
 
 .footer-brand{
-  font-family: 'pacificoregular';
   display: inline-block;
   font-size: 30px;
   line-height: 40px;
@@ -779,7 +778,6 @@ i.icon-xlg {
 }
 
 .bottom h3{
-  font-family: 'open_sansbold';
   margin: 20px 0 15px 0;
   color: #FFF;
   font-size: 14px;

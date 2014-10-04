@@ -5,10 +5,8 @@
 //Meta data values
 	$start_time = get_post_meta( get_the_ID(), 'event_start_time' ,true );
 	$end_time = get_post_meta( get_the_ID(), 'event_end_time' ,true ); 
-
-
-$booking_url=get_post_meta( get_the_ID(), 'event_end_time' ,true ); 
-$price=get_post_meta( get_the_ID(), 'event_price' ,true ); 
+	$booking_url=get_post_meta( get_the_ID(), 'event_url' ,true ); 
+	$price=get_post_meta( get_the_ID(), 'event_price' ,true ); 
 
 	?>
  
