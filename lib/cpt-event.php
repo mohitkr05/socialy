@@ -34,7 +34,10 @@ function create_event_type() {
  
   register_post_type('event',$args);
 }
+
+
 add_filter('post_updated_messages', 'create_event_type_messages');
+
 
 function create_event_type_messages( $messages ) {
   global $post, $post_ID;
@@ -57,6 +60,77 @@ function create_event_type_messages( $messages ) {
   );
 
   return $messages;
+}
+
+//Configure the metaboxes
+
+add_filter( 'cmb2_meta_boxes', 'cmb2_event_metaboxes' );
+
+function cmb2_event_metaboxes( array $meta_boxes ) {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = 'event_';
+
+	/**
+	 * Sample metabox to demonstrate each field type included
+	 */
+	$meta_boxes['event_metabox'] = array(
+		'id'            => 'event_metabox',
+		'title'         => __( 'Event Metabox', 'cmb2' ),
+		'object_types'  => array( 'event', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
+		'fields'        => array(
+			
+			array(
+				'name' => __( 'Event Start Date and time', 'cmb2' ),
+				'desc' => __( 'Please select the event start date and time', 'cmb2' ),
+				'id'   => $prefix . 'start_time',
+				'type' => 'text_datetime_timestamp',
+			),
+			
+			array(
+				'name' => __( 'Event End Date and time', 'cmb2' ),
+				'desc' => __( 'Please select the event end date and time', 'cmb2' ),
+				'id'   => $prefix . 'end_time',
+				'type' => 'text_datetime_timestamp',
+			),
+			array(
+				'name' => __( 'Booking URL', 'cmb2' ),
+				'desc' => __( 'Booking URL of website', 'cmb2' ),
+				'id'   => $prefix . 'url',
+				'type' => 'text_url',
+				// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+				// 'repeatable' => true,
+			),
+			array(
+				'name' => __( 'Ticket Price', 'cmb2' ),
+				'desc' => __( 'The basic ticket price', 'cmb2' ),
+				'id'   => $prefix . 'price',
+				'type' => 'text_money',
+				'before_field' => 'INR', // override '$' symbol if needed
+				// 'repeatable' => true,
+			),
+			array(
+				'name' => __( 'Video', 'cmb2' ),
+				'desc' => __( 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.', 'cmb2' ),
+				'id'   => $prefix . 'embed',
+				'type' => 'oembed',
+			),
+			array(
+				'name' => __( 'Attending Users', 'cmb2' ),
+				'desc' => __( 'List of attending users', 'cmb2' ),
+				'id'   => $prefix . 'attendees',
+				'type' => 'text_medium',
+				// 'repeatable' => true,
+			),
+		),
+	);
+
+	
+	return $meta_boxes;
 }
 
 ?>

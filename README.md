@@ -7,12 +7,18 @@
 
 
 ##To do
--Fix featured images
--Display map in location
+- Fix featured images
+- Display map in location
+
+
+
 ##Version 0.1
 
--Added CSS
--Added event and location cpt
--Connected locations and events
--Fixed the title bg for pages
--Fixed the title bg for events
+- Added CSS
+- Added event and location cpt
+- Connected locations and events
+- Fixed the title bg for pages
+- Fixed the title bg for events
+- Customized the footer with widgets
+- Custom templating for events and locations
+- Customized login form
