@@ -1,75 +1,59 @@
-/**
- * Theme: Flat Bootstrap
- * 
- * The stylesheet for our flat ui
- *
- * Contains our custom fonts, color palette, sections with padding, etc.
- *
- * @package flat-bootstrap
- */
- 
-/* 
- * OVERALL STYLES
- */
-
-/* Google fonts */
-/*
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
-*/
-
-@import url(http://fonts.googleapis.com/css?family=Knewave);
-
+ html, 
 body {
-	font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    color: #121212;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 18px;
-    color: #555;
-
+    color: #121212;
     -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
 }
-
+/*typography bootstrap overrides*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 27px;
+    
+}
+h4{
+    font-size: 24px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 13px;
+}
+p{
+    line-height: 25px;
+    font-weight: 400;
+}
 a {
-    color: #16a085;
-    word-wrap: break-word;
-
-    -webkit-transition: color .1s ease-in, background .1s ease-in;
-    -moz-transition: color .1s ease-in, background .1s ease-in;
-    -ms-transition: color .1s ease-in, background .1s ease-in;
-    -o-transition: color .1s ease-in, background .1s ease-in;
-    transition: color .1s ease-in, background .1s ease-in;
+    background: transparent;
+    outline: none; 
+    text-decoration: none;	
+    -webkit-transition: 0.4s cubic-bezier(0.25,.46,.45,.94);
+    transition: 0.4s cubic-bezier(0.25,.46,.45,.94);
+    -webkit-transition-property: background-color,color;
+    transition-property: background-color,color;
 }
-
+a:active,
 a:hover,
 a:focus {
-    color: #19B798;
-    text-decoration: none;
-    outline: 0;
-}
-a:before,
-a:after,
-a:hover i:before,
-a:focus i:before {
-    -webkit-transition: color .1s ease-in, background .1s ease-in;
-    -moz-transition: color .1s ease-in, background .1s ease-in;
-    -ms-transition: color .1s ease-in, background .1s ease-in;
-    -o-transition: color .1s ease-in, background .1s ease-in;
-    transition: color .1s ease-in, background .1s ease-in;
-}
-
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6 {
-	font-family: "Raleway", Arial, "Helvetica Neue", sans-serif;
-}
-h1, 
-h2, 
-h3 {
-    font-weight: 300;
+    outline: 0; 
+    background: transparent;
+    color: #35bdf6 !important;
+    text-decoration: none;	  
 }
 
 p {
@@ -737,4 +721,12 @@ button.btn.btn-hollow:hover,
     color: #fff;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.content {
+    border: 1px solid #eeeeee;
+    margin-bottom: 60px;
+    margin-top: 0;
+    padding: 20px;
 }

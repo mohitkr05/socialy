@@ -122,7 +122,7 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 			array(
 				'name' => __( 'Attending Users', 'cmb2' ),
 				'desc' => __( 'List of attending users', 'cmb2' ),
-				'id'   => $prefix . 'attendees',
+				'id'   => $prefix . 'userlist',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),

@@ -1,22 +1,4 @@
-/**
- * Theme: Flat Bootstrap
- * 
- * The stylesheet for basic WordPress styles
- *
- * Contains padding, margins, list styles, etc.
- *
- * @package flat-bootstrap
- */
- 
-/** 
- * SET SOME REASONABLE DEFAULT WORDPRESS STYLES. MOST OF THESE ARE REQUIRED BY ALL
- * WORDPRESS THEMES
- */
-
-/* Text meant only for screen readers. Required only for WordPress as Bootstrap uses
- * .sr-only and we apply that in this theme.
- */
-.screen-reader-text {
+ .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
@@ -618,7 +600,6 @@ code {
   	display: table;
 	background-repeat: no-repeat;
 	text-align:center;
-	background-attachment: scroll;
 	background-position: top center;
 	background-color: #e7e7e7; /*gray*/
 	width: 100%;
@@ -845,3 +826,12 @@ i.icon-xlg {
   color: #7f8c8d;
   text-decoration: none;
 }
+
+
+
+video#bgvid { 
+position: fixed; right: 0; bottom: 0;
+min-width: 100%; min-height: 100%;
+width: auto; height: auto; z-index: -100;
+}
+
