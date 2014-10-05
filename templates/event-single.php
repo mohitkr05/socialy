@@ -10,7 +10,7 @@
 		
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
-	  <h3>Related Events:</h3>
-	 <?php display_related_events($post);?>
+	   
+	 <?php //display_related_events($post);?>
   </article>
 <?php endwhile; ?>
