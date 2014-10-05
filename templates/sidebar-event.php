@@ -1,4 +1,5 @@
 
+<?php dynamic_sidebar('sidebar-event'); ?>
 <?php
 
 
@@ -78,5 +79,4 @@ endif;
 ?>
 
 
-<?php dynamic_sidebar('sidebar-event'); ?>
 
