@@ -22,9 +22,12 @@
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->
+		
+		<?php if(!is_archive()) {?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
          <?php get_template_part('templates/sidebar', 'event'); ?>
         </aside><!-- /.sidebar -->
+	 <?php }?>
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 

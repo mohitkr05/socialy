@@ -24,7 +24,7 @@ function create_event_type() {
     'show_in_menu' => true, 
     'query_var' => true,
     'rewrite' => true,
-	'taxonomies' => array ('category'),
+	'taxonomies' => array ('event_category'),
     'capability_type' => 'post',
     'has_archive' => true, 
     'hierarchical' => false,
@@ -131,6 +131,20 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 
 	
 	return $meta_boxes;
+}
+
+add_action( 'init', 'create_event_cat_tax' );
+
+function create_event_cat_tax() {
+	register_taxonomy(
+		'event-category',
+		'event',
+		array(
+			'label' => __( 'Event Category' ),
+			'rewrite' => array( 'slug' => 'event-category' ),
+			'hierarchical' => true,
+		)
+	);
 }
 
 ?>

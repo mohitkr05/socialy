@@ -187,5 +187,16 @@ $term_ids = wp_list_pluck($terms,'term_id');
   <?php  }
 	
 }
-?>
+
  
+
+// Define what post types to search
+function searchAll( $query ) {
+	if ( $query->is_search ) {
+		$query->set( 'post_type', array( 'post', 'page', 'feed', 'event', 'location'));
+	}
+	return $query;
+}
+
+// The hook needed to search ALL content
+add_filter( 'the_search_query', 'searchAll' );

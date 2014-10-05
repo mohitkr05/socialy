@@ -8,7 +8,12 @@
 
 ##To do
 - Display map in location
+- Create front-end event update form
 
+
+##Version 0.7
+- Fixed the events display
+- Fixed front page / css
 
 
 ##Version 0.6

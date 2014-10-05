@@ -48,3 +48,24 @@
 	</header><!-- .content-header -->
 
 	<?php endif; // has_post_thumbnail() ?>
+
+
+<?php if(is_archive()){
+		$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+			$featured_image =  get_template_directory_uri() . '/assets/img/event_bg.jpg';
+		$size = getimagesize($featured_image);
+		$image_width = $size[0];
+		$image_url = $featured_image;
+		
+		echo '<header class="content-header-image">';
+		echo '<div class="section-image" style="background-image: url(\'' . $image_url . '\');">'
+				.'<div class="section-image-overlay">';
+		echo '<h1 class="header-image-title">' . $term->slug . '</h1>';
+		
+		echo '</div><!-- .section-image-overlay -->'
+		.'</div><!-- .section-image -->'
+		.'</header><!-- content-image-header -->';
+		
+		
+		
+	}

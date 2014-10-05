@@ -1,52 +1,5 @@
 <?php get_template_part('featured-event-slider'); ?>
-    
-  
-<!--
-    <div class="section">
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <div class="block-icon">
-              <i class="fa fa-rocket"></i>
-            </div>
-
-            <div class="block-body">
-              <h2>Creative design</h2>
-              <div class="line-subtitle"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim placerat lectus, at ornare sapien tempor eget. Etiam vel vestibulum nisl</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="block-icon">
-              <i class="fa fa-users"></i>
-            </div>
-
-            <div class="block-body">
-              <h2>Built for humans</h2>
-              <div class="line-subtitle"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim placerat lectus, at ornare sapien tempor eget. Etiam vel vestibulum nisl</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="block-icon">
-              <i class="fa fa-cog"></i>
-            </div>
-
-            <div class="block-body">
-              <h2>Easy customization</h2>
-              <div class="line-subtitle"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim placerat lectus, at ornare sapien tempor eget. Etiam vel vestibulum nisl</p>
-            </div>
-          </div>
-        </div><!-- /.row -->
-
-<!--      </div><!-- /.container -->
-
-<!--     </div><!-- /.section -->
-<!-- 
-    <div class="section-colored home">
+        <div class="section-colored home">
 
       <div class="container">
 
@@ -55,16 +8,64 @@
             <h2>Break the ice... Socialize!!</h2>
           </div>
           <div class="col-md-3 col-sm-4">
-            <a href="#" class="btn btn-danger btn-lg">Contact with us</a>
+            <a href="/register" class="btn btn-danger btn-lg">Join</a>
           </div>
         </div><!-- /.row -->
-<!-- 
-  <!--     </div><!-- /.container -->
+ 
+   </div><!-- /.container -->
 
-   <!--  </div><!-- /.section-colored -->
+  </div><!-- /.section-colored -->
+ 
+    <div class="section">
+
+      <div class="container">
+	<div class="block-body">
+<h2>How it works?</h2>
+		  </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <div class="block-icon">
+              <i class="fa fa-rocket"></i>
+            </div>
+
+            <div class="block-body">
+              <h2>Move Out</h2>
+              <div class="line-subtitle"></div>
+              <p>Move out and attend events that you really love.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="block-icon">
+              <i class="fa fa-users"></i>
+            </div>
+
+            <div class="block-body">
+              <h2> Meet new people</h2>
+              <div class="line-subtitle"></div>
+              <p>Meet new people, not online, but in real life. Break the Ice. Socialize.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="block-icon">
+              <i class="fa fa-cog"></i>
+            </div>
+
+            <div class="block-body">
+              <h2> Be Awesome	</h2>
+              <div class="line-subtitle"></div>
+              <p>Have some awesome time in your real life.</p>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+   </div><!-- /.container -->
+
+     </div><!-- /.section -->
+  
+
 		 <?php 
 global $post, $event;
-query_posts( array ( 'post_type' => 'event' ,   'posts_per_page' => 6) ); ?>
+query_posts( array ( 'post_type' => 'event' , 'event-category' => 'featured' ,'posts_per_page' => 3) ); ?>
  
  
 <?php if ( have_posts() ) : ?>
@@ -79,7 +80,7 @@ query_posts( array ( 'post_type' => 'event' ,   'posts_per_page' => 6) ); ?>
 		  
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="section-title">Current Events</h2>
+            <h2 class="section-title">Featured Events</h2>
           </div>
 	<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
