@@ -200,3 +200,41 @@ function searchAll( $query ) {
 
 // The hook needed to search ALL content
 add_filter( 'the_search_query', 'searchAll' );
+
+
+///Function to check if the user can register for event.
+/*
+ function can_register_for_event($post) {
+	$data = unserialize(get_post_meta($post->ID, 'event_userlist', true));
+	  
+	  // If no one has registered or if the id is not found in the field
+	if(( count($data) != 0 ) || ( !in_array( $current_user->ID, $data ) )) {
+	
+		echo  '<a class="btn btn-primary btn-lg" href=" '. register_for_event() .'">Register for Event</a> <br/><br/><hr>';
+		
+	}
+		
+	
+}
+
+
+  //Function to register for the event 
+ function register_for_event($post) {
+ 	global $user , $post;
+	$data = unserialize(get_post_meta($post->ID, 'event_userlist', true));
+	if( count($data) != 0 ) {
+	if ( !in_array( $current_user->ID, $data ) ) {
+	$data[] = $current_user->ID;
+	}
+	$data = array_unique($data); // remove duplicates
+	sort( $data ); // sort array
+	$data = serialize($data);
+	update_post_meta($post->ID, 'event_userlist', $data);
+} else {
+	$data = array();
+		$data[0] = $current_user->ID;
+		$data = serialize($data);
+		update_post_meta($post->ID, 'event_userlist', $data);
+	}	
+} 
+*/
