@@ -68,15 +68,15 @@ if ( $connected->have_posts() ) :
 <?php// echo GeoMashup::map() ?>
 <?php endwhile; ?>
 
-	
+	</div>
+</div>
 <?php 
 // Prevent weirdness
 wp_reset_postdata();
 
 endif;
 ?>
-</div>
-</div>
+
 
 <?php dynamic_sidebar('sidebar-event'); ?>
 
