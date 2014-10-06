@@ -24,7 +24,7 @@ function create_event_type() {
     'show_in_menu' => true, 
     'query_var' => true,
     'rewrite' => true,
-	'taxonomies' => array ('event_category'),
+	'taxonomies' => array ('event_category','location'),
     'capability_type' => 'post',
     'has_archive' => true, 
     'hierarchical' => false,
@@ -83,7 +83,12 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 		'show_names'    => true, // Show field names on the left
 		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
 		'fields'        => array(
-			
+	 array(
+				'name' => __( 'Event Timing', 'cmb2' ),
+				'desc' => __( 'This is a title description', 'cmb2' ),
+				'id'   => $prefix . 'timing',
+				'type' => 'title',
+			),
 			array(
 				'name' => __( 'Event Start Date and time', 'cmb2' ),
 				'desc' => __( 'Please select the event start date and time', 'cmb2' ),
@@ -97,9 +102,17 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'end_time',
 				'type' => 'text_datetime_timestamp',
 			),
+			
+			 array(
+				'name' => __( 'Organiser', 'cmb2' ),
+				'desc' => __( 'Event Organiser', 'cmb2' ),
+				'id'   => $prefix . 'organiser',
+				'type' => 'text_medium',
+				// 'repeatable' => true,
+			),
 			array(
 				'name' => __( 'Booking URL', 'cmb2' ),
-				'desc' => __( 'Booking URL of website', 'cmb2' ),
+				'desc' => __( 'Booking URL or website of Organiser', 'cmb2' ),
 				'id'   => $prefix . 'url',
 				'type' => 'text_url',
 				// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -126,6 +139,36 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),
+			array(
+				'name' => __( 'Venue', 'cmb2' ),
+				'desc' => __( 'The venue of the event', 'cmb2' ),
+				'id'   => 'geo_address',
+				'type' => 'pw_map',
+    			'sanitization_cb' => 'pw_map_sanitise',
+			),
+			 array(
+				'name' => __( 'Lattitude', 'cmb2' ),
+				'desc' => __( 'The lattitude and longitude', 'cmb2' ),
+				'id'   => 'geo_lattitude',
+				'type' => 'text_medium',
+				// 'repeatable' => true,
+			),
+			 array(
+				'name' => __( 'Longitude', 'cmb2' ),
+				'desc' => __( 'The venue of the event', 'cmb2' ),
+				'id'   => 'geo_longitude',
+				'type' => 'text_medium',
+				// 'repeatable' => true,
+			),
+			
+			array(
+				'name'    => __( 'Event Display Colour', 'cmb2' ),
+				'desc'    => __( 'Display colour of event on frontend', 'cmb2' ),
+				'id'      => $prefix . 'frontcolor',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
+			),
+			
 		),
 	);
 
@@ -134,6 +177,7 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 }
 
 add_action( 'init', 'create_event_cat_tax' );
+add_action( 'init', 'create_location_cat_tax' );
 
 function create_event_cat_tax() {
 	register_taxonomy(
@@ -146,5 +190,17 @@ function create_event_cat_tax() {
 		)
 	);
 }
+function create_location_cat_tax() {
+	register_taxonomy(
+		'location',
+		'event',
+		array(
+			'label' => __( 'Location' ),
+			'rewrite' => array( 'slug' => 'location' ),
+			'hierarchical' => true,
+		)
+	);
+}
+
 
 ?>

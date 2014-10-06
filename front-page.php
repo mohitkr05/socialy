@@ -116,41 +116,10 @@ query_posts( array ( 'post_type' => 'event' , 'event-category' => 'featured' ,'p
     </div><!-- /.section -->
   <?php endif; ?>
 
-<!--- for sponsors
+ 
     <div class="section-colored">
-
-      <div class="container">
-        <h3 class="section-title text-center">Some of Our Clients</h3>
-  
-        <div class="container clients">
-
-          <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-              <a href="#"><img class="img-responsive" src="img/client-1.png" alt="client 1"></a>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-              <a href="#"><img class="img-responsive" src="img/client-2.png" alt="client 2"></a>
-            </div>
-            
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-              <a href="#"><img class="img-responsive" src="img/client-3.png" alt="client 3"></a>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-              <a href="#"><img class="img-responsive" src="img/client-4.png" alt="client 4"></a>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-              <a href="#"><img class="img-responsive" src="img/client-5.png" alt="client 5"></a>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-              <a href="#"><img class="img-responsive" src="img/client-6.png" alt="client 6"></a>
-            </div>
-          </div><!-- /.row -->
-
-   <!--     </div> /.container -->
+		<?php get_template_part('templates/event-category-display'); ?>
+     </div>
 
 <!--       </div>/.container -->
 

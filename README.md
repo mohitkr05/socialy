@@ -9,11 +9,22 @@
 ##To do
 - Display map in location
 - Create front-end event update form
+- Fix the event listing page.
+
+
+
+##Version 0.8
+- Removed locations custom post type and added it as taxonomy
+- Added custom fields for event details.
+- Added map for location search
+- Images for event categories.
+- Fixed the CSS.
 
 
 ##Version 0.7
 - Fixed the events display
 - Fixed front page / css
+
 
 
 ##Version 0.6
