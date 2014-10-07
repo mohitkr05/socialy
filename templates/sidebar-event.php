@@ -8,9 +8,31 @@
 	$end_time = get_post_meta( get_the_ID(), 'event_end_time' ,true ); 
 	$booking_url=get_post_meta( get_the_ID(), 'event_url' ,true ); 
 	$price=get_post_meta( get_the_ID(), 'event_price' ,true ); 
+	$venue=get_post_meta( get_the_ID(), 'geo_address' ,true ); 
+	$organiser=get_post_meta( get_the_ID(), 'event_organiser' ,true ); 
+	$video=get_post_meta( get_the_ID(), 'event_embed' ,true ); 
 
 	?>
- 
+<?php if(( ! empty( $venue ) ) OR (! empty($organiser))) {?>
+<div  class="panel panel-default">
+<div class="panel-heading"><h3 class="panel-title">Venue</h3></div>
+	
+	
+<div class="panel-body">
+<?php echo $venue; ?>
+</div>
+	
+	<div class="panel-heading"><h3 class="panel-title">Organised by</h3></div>
+	
+	
+<div class="panel-body">
+<?php echo $organiser; ?>
+</div>
+ </div> 
+
+<?php  } ?>
+
+
 <?php if(( ! empty( $price ) ) OR (! empty($booking_url))) {?>
 <div  class="panel panel-default">
 <div class="panel-heading"><h3 class="panel-title">Event Details</h3></div>
@@ -24,7 +46,7 @@
 <a class="btn btn-primary btn-lg" href="<?php echo $booking_url; ?>">Book Tickets</a>
 	<?php } ?>
  </div>
- </div>
+ </div> 
 <?php }?>
 
 <?php if( ! empty( $start_time ) ) { ?>
@@ -45,38 +67,7 @@
  </div>
 
 <?php }?>
-<?php
-// Find Location
-$connected = new WP_Query( array(
-  'connected_type' => 'events_to_locations',
-  'connected_items' => get_queried_object(),
-  'nopaging' => true,
-) );
-
-// Display connected pages
-if ( $connected->have_posts() ) :
-?>
-		
- 	
-<div  class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title">Location</h3></div>
-<div class="panel-body">
-
-<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
- <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	<p><?php echo get_post_meta($post->ID, 'geo_address', true);?></p>
-	
-<?php// echo GeoMashup::map() ?>
-<?php endwhile; ?>
-
-	</div>
-</div>
-<?php 
-// Prevent weirdness
-wp_reset_postdata();
-
-endif;
-?>
+ 
 
 
 

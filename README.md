@@ -11,7 +11,8 @@
 - Create front-end event update form
 - Fix the event listing page.
 
-
+##Version 0.9
+- Fixed the sidebar event details
 
 ##Version 0.8
 - Removed locations custom post type and added it as taxonomy

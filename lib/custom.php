@@ -200,11 +200,18 @@ function searchAll( $query ) {
 
 // The hook needed to search ALL content
 add_filter( 'the_search_query', 'searchAll' );
+ 
 
 
-///Function to check if the user can register for event.
-/*
- function can_register_for_event($post) {
+
+// Display the RSVP button
+<fieldset>
+
+    <input type="button" value="rsvp" name="event_userlist" id="event_userlist" value="<?php if(isset($_POST['event_userlist'])) echo $_POST['event_userlist'];?>" class="required" />
+	
+	
+	<?php 
+function can_register_for_event($post) {
 	$data = unserialize(get_post_meta($post->ID, 'event_userlist', true));
 	  
 	  // If no one has registered or if the id is not found in the field
@@ -237,4 +244,4 @@ add_filter( 'the_search_query', 'searchAll' );
 		update_post_meta($post->ID, 'event_userlist', $data);
 	}	
 } 
-*/
+?>
