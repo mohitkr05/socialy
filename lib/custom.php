@@ -204,6 +204,7 @@ add_filter( 'the_search_query', 'searchAll' );
 
 
 
+	/*
 // Display the RSVP button
 <fieldset>
 
@@ -244,4 +245,5 @@ function can_register_for_event($post) {
 		update_post_meta($post->ID, 'event_userlist', $data);
 	}	
 } 
+*/
 ?>
