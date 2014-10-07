@@ -1,5 +1,9 @@
 # [Socialy](http://socialy.in/)
 
+##Description
+Socialy is an attempt to make people out of their homes and participate in real life events.
+A custom WordPress theme forked from [Roots](https://github.com/roots/roots) with custom code.
+
 
 ##Issues
 
@@ -10,11 +14,15 @@
 - Display map in location
 - Create front-end event update form
 - Fix the event listing page.
+- Create a RSVP action
+- Create rating system
+- Create feedback form
 
 
 ##Version 1.0 - First major release
 - Added the event view snippet
 - Removed the CPT locations and other supporting files
+- Updated readme
 
 ##Version 0.9
 - Fixed the sidebar event details
@@ -61,4 +69,11 @@
 - Added CSS
 - Added event and location cpt
 - Connected locations and events
+
+
+##Credits
+
+[Roots](https://github.com/roots/roots)
+[Twitter Bootstrap](https://github.com/twbs/bootstrap/)
+[CMB2](https://github.com/WebDevStudios/CMB2)
 
