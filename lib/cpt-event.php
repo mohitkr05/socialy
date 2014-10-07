@@ -142,21 +142,29 @@ function cmb2_event_metaboxes( array $meta_boxes ) {
 			array(
 				'name' => __( 'Venue', 'cmb2' ),
 				'desc' => __( 'The venue of the event', 'cmb2' ),
-				'id'   => 'geo_address',
+				'id'   => $prefix . 'venue',
+				'type' => 'text_medium',
+				// 'repeatable' => true,
+			),
+			
+			array(
+				'name' => __( 'Venue', 'cmb2' ),
+				'desc' => __( 'The venue of the event', 'cmb2' ),
+				'id'   => 'geo',
 				'type' => 'pw_map',
     			'sanitization_cb' => 'pw_map_sanitise',
 			),
 			 array(
 				'name' => __( 'Lattitude', 'cmb2' ),
 				'desc' => __( 'The lattitude and longitude', 'cmb2' ),
-				'id'   => 'geo_lattitude',
+				'id'   => 'lattitude',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),
 			 array(
 				'name' => __( 'Longitude', 'cmb2' ),
 				'desc' => __( 'The venue of the event', 'cmb2' ),
-				'id'   => 'geo_longitude',
+				'id'   => 'longitude',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),

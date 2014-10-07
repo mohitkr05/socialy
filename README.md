@@ -11,6 +11,11 @@
 - Create front-end event update form
 - Fix the event listing page.
 
+
+##Version 1.0 - First major release
+- Added the event view snippet
+- Removed the CPT locations and other supporting files
+
 ##Version 0.9
 - Fixed the sidebar event details
 

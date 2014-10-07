@@ -203,6 +203,23 @@ add_filter( 'the_search_query', 'searchAll' );
  
 
 
+// Page views on Events
+
+ 
+function setAndViewPostViews($postID) {
+    $count_key = 'event_views';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+    return $count; /* so you can show it */
+}
+
 
 	/*
 // Display the RSVP button

@@ -8,25 +8,36 @@
 	$end_time = get_post_meta( get_the_ID(), 'event_end_time' ,true ); 
 	$booking_url=get_post_meta( get_the_ID(), 'event_url' ,true ); 
 	$price=get_post_meta( get_the_ID(), 'event_price' ,true ); 
-	$venue=get_post_meta( get_the_ID(), 'geo_address' ,true ); 
+	$venue=get_post_meta( get_the_ID(), 'event_venue' ,true ); 
 	$organiser=get_post_meta( get_the_ID(), 'event_organiser' ,true ); 
 	$video=get_post_meta( get_the_ID(), 'event_embed' ,true ); 
 
 	?>
-<?php if(( ! empty( $venue ) ) OR (! empty($organiser))) {?>
+<?php if( ! empty( $venue ))  {?>
 <div  class="panel panel-default">
 <div class="panel-heading"><h3 class="panel-title">Venue</h3></div>
 	
-	
+		 
 <div class="panel-body">
-<?php echo $venue; ?>
+<?php echo $venue ; ?>
 </div>
 	
+ </div> 
+
+<?php  } ?>
+ 
+
+<?php if( ! empty( $organiser ) ) {?>
+<div  class="panel panel-default">
+
+	 
 	<div class="panel-heading"><h3 class="panel-title">Organised by</h3></div>
 	
 	
 <div class="panel-body">
 <?php echo $organiser; ?>
+	
+	 
 </div>
  </div> 
 
