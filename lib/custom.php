@@ -9,8 +9,17 @@ add_filter('roots_wrap_base', 'roots_wrap_base_cpts'); // Add our function to th
     if ($cpt) {
        array_unshift($templates, 'base-' . $cpt . '.php'); // Shift the template to the front of the array
     }
+	 
+	if(is_buddypress()) {
+		 array_unshift($templates, 'base-buddypress.php'); // Shift the template to the front of the array
+		 
+	 }  
     return $templates; // Return our modified array with base-$cpt.php at the front of the queue
+	  
+	
   }
+
+
 
 
 

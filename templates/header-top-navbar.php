@@ -82,5 +82,9 @@
 <?php do_action( 'bp_after_header'     ); ?>
 <?php do_action( 'bp_before_container' ); ?>
 
-<?php get_template_part('templates/page', 'header'); ?>
+<?php if(!is_buddypress()) {
+get_template_part('templates/page', 'header');
+}
+?>
+
 <?php get_template_part('templates/login', 'modal'); ?>

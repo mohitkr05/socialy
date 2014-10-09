@@ -8,18 +8,21 @@
            <?php do_action( 'wordpress_social_login' ); ?> 
           </div>
           <div class="modal-body">
-           <?php 
-				 $args = array(
-        'redirect' => '/events', 
-        'form_id' => 'loginform-custom',
-        'label_username' => __( 'Your Username' ),
-        'label_password' => __( 'Your Password' ),
-        'label_remember' => __( 'Remember Me' ),
-        'label_log_in' => __( 'Log In' ),
-        'remember' => true
-    );
-    wp_login_form( $args );
-  ?>
+ 
+
+<?php
+$args = array(
+'redirect' => home_url(),
+'id_username' => 'user',
+'id_password' => 'pass',
+'form_id'        => 'loginform'	
+)
+;?>
+
+<?php wp_login_form( $args ); ?>
+
+ 
+
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

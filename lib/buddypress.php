@@ -21,5 +21,3 @@ if ( !defined( 'BP_AVATAR_THUMB_HEIGHT' ) )
  * Don't show the toolbar on front end by default
  */
 add_filter('show_admin_bar', '__return_false');
-
-

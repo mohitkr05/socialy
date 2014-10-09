@@ -790,11 +790,8 @@ span.page-numbers.current {
 }
 
 /* Make user profile pics (avatars) circles */
-.avatar {
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-}
+
+
 img.avatar.thumbnail {
 	border: none;
 	padding: 0;
@@ -940,3 +937,45 @@ button.btn.btn-hollow:hover,
     border-radius: 5px;
     }
 
+ 
+#loginform .form_heading{
+width: 380px;
+height: 42px;
+background-color: rgb(162, 46, 51);
+color: #fff;
+padding-top: 15px;
+padding-left: 20px;
+font-size: 20px;
+}
+
+#loginform form{
+margin-left: 50px;
+}
+
+#loginform label{
+clear:both;
+margin-right: 200px;
+}
+
+#loginform .input{
+height: 35px;
+width: 270px;
+border: 1px solid rgb(201, 201, 201);
+background-color: rgb(238, 235, 236);
+radius-border: 3px;
+}
+
+#wp-submit{
+height: 35px;
+width: 90px;
+border: 1px rgb(162, 46, 51);
+background-color: rgb(162, 46, 51);
+border-radius: 3px;
+color: #fff;
+}
+
+#loginform .error-msg{
+color: red;
+margin-left: 35%;
+position: relative;
+}
