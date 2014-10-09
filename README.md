@@ -3,6 +3,8 @@
 ##Description
 Socialy is an attempt to make people out of their homes and participate in real life events.
 A custom WordPress theme forked from [Roots](https://github.com/roots/roots) with custom code.
+This theme is under heavy development and not yet tested completely.
+Please use on your own risk.
 
 
 ##Issues
@@ -18,6 +20,11 @@ A custom WordPress theme forked from [Roots](https://github.com/roots/roots) wit
 - Create rating system
 - Create feedback form
 
+
+#Version 1.1 - Heavy development
+- Added support for buddypress - header.php
+- Login Modal added with support for the WP Hybrid auth
+- Custom Page for Profile 
 
 ##Version 1.0 - First major release
 - Added the event view snippet
